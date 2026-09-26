@@ -1,0 +1,6 @@
+# Optional: only needed to rerun the Phase 0 CP-SAT research experiments.
+-r requirements.txt
+ortools==9.12.4544
+networkx>=3.4,<4
+numpy>=2,<3
+pytest>=8,<10

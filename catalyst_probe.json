@@ -1,0 +1,114 @@
+[
+ {
+  "variant": "stripped",
+  "verifier": "openssl-3.5.4",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/stripped.pem: OK",
+  "cert_der_bytes": 418
+ },
+ {
+  "variant": "stripped",
+  "verifier": "openssl-3.0.13",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/stripped.pem: OK",
+  "cert_der_bytes": 418
+ },
+ {
+  "variant": "stripped",
+  "verifier": "openssl-1.1.1w",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/stripped.pem: OK",
+  "cert_der_bytes": 418
+ },
+ {
+  "variant": "stripped",
+  "verifier": "pyca-cryptography-50",
+  "accepted": true,
+  "detail": "ok",
+  "cert_der_bytes": 418
+ },
+ {
+  "variant": "valid_alt",
+  "verifier": "openssl-3.5.4",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/valid_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "valid_alt",
+  "verifier": "openssl-3.0.13",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/valid_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "valid_alt",
+  "verifier": "openssl-1.1.1w",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/valid_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "valid_alt",
+  "verifier": "pyca-cryptography-50",
+  "accepted": true,
+  "detail": "ok",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "forged_alt",
+  "verifier": "openssl-3.5.4",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/forged_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "forged_alt",
+  "verifier": "openssl-3.0.13",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/forged_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "forged_alt",
+  "verifier": "openssl-1.1.1w",
+  "accepted": true,
+  "detail": "/tmp/tmpamugkgur/forged_alt.pem: OK",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "forged_alt",
+  "verifier": "pyca-cryptography-50",
+  "accepted": true,
+  "detail": "ok",
+  "cert_der_bytes": 5757
+ },
+ {
+  "variant": "forged_crit",
+  "verifier": "openssl-3.5.4",
+  "accepted": false,
+  "detail": "error /tmp/tmpamugkgur/forged_crit.pem: verification failed",
+  "cert_der_bytes": 5768
+ },
+ {
+  "variant": "forged_crit",
+  "verifier": "openssl-3.0.13",
+  "accepted": false,
+  "detail": "error /tmp/tmpamugkgur/forged_crit.pem: verification failed",
+  "cert_der_bytes": 5768
+ },
+ {
+  "variant": "forged_crit",
+  "verifier": "openssl-1.1.1w",
+  "accepted": false,
+  "detail": "error 34 at 0 depth lookup: unhandled critical extension",
+  "cert_der_bytes": 5768
+ },
+ {
+  "variant": "forged_crit",
+  "verifier": "pyca-cryptography-50",
+  "accepted": false,
+  "detail": "VerificationError: validation failed: invalid extension: 2.5.29.72: certificate contains unaccounted-for critical extensions (encountered processing <Certificate(subject=<Name(CN=localhost)>, ...)>)",
+  "cert_der_bytes": 5768
+ }
+]

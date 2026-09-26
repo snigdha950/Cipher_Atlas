@@ -1,0 +1,322 @@
+[
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK undefined",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_only",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK undefined",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ecdsa-p256",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": null,
+  "actual_ok": true,
+  "detail": "Picked up JAVA_TOOL_OPTIONS:",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ERR ERR_SSL_SSL/TLS_ALERT_HANDSHAKE_FAILURE",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ecdsa-p256",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "classical_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "classical_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ecdsa-p256",
+  "server_config": "classical_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK X25519",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ecdsa-p256",
+  "server_config": "classical_only",
+  "predicted_ok": null,
+  "actual_ok": true,
+  "detail": "Picked up JAVA_TOOL_OPTIONS:",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK undefined",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_only",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK undefined",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ml-dsa-65",
+  "server_config": "hybrid_with_classical_fallback",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ERR ERR_SSL_SSL/TLS_ALERT_HANDSHAKE_FAILURE",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ml-dsa-65",
+  "server_config": "mlkem1024_only",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ },
+ {
+  "app": "curl-8.5.0",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "classical_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "curl: (35) OpenSSL/3.0.13: error:0A000410:SSL routines::sslv3 alert handshake failure",
+  "outcome": "agree"
+ },
+ {
+  "app": "python3-ssl",
+  "twin": "openssl-3.0.13",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "classical_only",
+  "predicted_ok": false,
+  "actual_ok": false,
+  "detail": "ssl.SSLError: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] sslv3 alert handshake failure (_ssl.c:1016)",
+  "outcome": "agree"
+ },
+ {
+  "app": "node-22.22.2",
+  "twin": "openssl-3.5.4",
+  "cert_alg": "ml-dsa-65",
+  "server_config": "classical_only",
+  "predicted_ok": true,
+  "actual_ok": true,
+  "detail": "OK X25519",
+  "outcome": "agree"
+ },
+ {
+  "app": "java-21-jsse",
+  "twin": null,
+  "cert_alg": "ml-dsa-65",
+  "server_config": "classical_only",
+  "predicted_ok": null,
+  "actual_ok": false,
+  "detail": "\tat J.main(J.java:9)",
+  "outcome": "no_twin"
+ }
+]

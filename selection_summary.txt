@@ -1,0 +1,50 @@
+
+== steep
+strategy        certify$  probes  firstOK$  wrong    sec
+oracle            3709.9    55.1    1126.5   18.8    1.7
+criticality       3742.0    54.9    3590.2   52.2  0.217
+centrality        3826.2    59.0    3503.1  56.42  0.164
+evoi_misprior     3846.7    57.4    3537.4   54.2  0.157
+fanin             3854.4    54.8    3713.7  50.15  0.152
+decisive          3862.3    61.2    3482.3  59.27  4.022
+evoi              3864.7    55.1    3716.5  50.27  0.153
+random            3960.6    61.5    3772.7  59.55  0.169
+test_all          6331.6    78.1    6331.6    0.0  0.003
+
+== two_tier
+strategy        certify$  probes  firstOK$  wrong    sec
+oracle            1000.2    55.1     302.3   18.8  1.701
+criticality       1006.5    54.9     963.0   52.2  0.231
+fanin             1032.7    54.8     986.1  50.15  0.153
+evoi              1035.5    55.1     986.5  50.27  0.156
+evoi_misprior     1036.0    56.6     962.5  52.05  0.157
+centrality        1038.7    59.0     955.1  56.42  0.167
+decisive          1053.3    61.2     958.3  59.27  4.076
+random            1075.1    61.5    1026.0  59.55  0.177
+test_all          1675.7    78.1    1675.7    0.0  0.003
+
+== uniform
+strategy        certify$  probes  firstOK$  wrong    sec
+evoi                54.8    54.8      50.0  50.02  0.148
+oracle              54.8    54.8      18.6   18.6  1.901
+criticality         54.9    54.9      52.1  52.12  0.223
+fanin               55.0    55.0      53.5   53.5   0.15
+evoi_misprior       56.7    56.7      55.8   55.8  0.153
+decisive            57.5    57.5      55.2  55.23  3.607
+centrality          58.9    58.9      56.4  56.35  0.166
+random              61.5    61.5      59.5  59.55   0.17
+test_all            78.1    78.1      78.1    0.0  0.003
+
+steep:fanin-decisive {'mean_diff_certify': -7.8, 'ci95_certify': [-71.2, 58.8], 'rel_reduction_certify_pct': -0.2, 'mean_diff_first_correct': 231.4, 'ci95_first_correct': [77.4, 401.1]}
+steep:criticality-decisive {'mean_diff_certify': -120.2, 'ci95_certify': [-161.0, -77.5], 'rel_reduction_certify_pct': -3.2, 'mean_diff_first_correct': 108.0, 'ci95_first_correct': [-48.5, 278.6]}
+steep:evoi-decisive {'mean_diff_certify': 2.5, 'ci95_certify': [-64.8, 77.2], 'rel_reduction_certify_pct': 0.1, 'mean_diff_first_correct': 234.2, 'ci95_first_correct': [82.2, 398.2]}
+steep:random-decisive {'mean_diff_certify': 98.3, 'ci95_certify': [35.1, 173.3], 'rel_reduction_certify_pct': 2.5, 'mean_diff_first_correct': 290.4, 'ci95_first_correct': [118.7, 466.0]}
+two_tier:fanin-decisive {'mean_diff_certify': -20.6, 'ci95_certify': [-37.1, -4.0], 'rel_reduction_certify_pct': -2.0, 'mean_diff_first_correct': 27.9, 'ci95_first_correct': [-12.6, 72.6]}
+two_tier:criticality-decisive {'mean_diff_certify': -46.8, 'ci95_certify': [-58.2, -35.2], 'rel_reduction_certify_pct': -4.6, 'mean_diff_first_correct': 4.7, 'ci95_first_correct': [-35.4, 48.4]}
+two_tier:evoi-decisive {'mean_diff_certify': -17.8, 'ci95_certify': [-34.6, 0.3], 'rel_reduction_certify_pct': -1.7, 'mean_diff_first_correct': 28.2, 'ci95_first_correct': [-11.5, 70.8]}
+two_tier:random-decisive {'mean_diff_certify': 21.8, 'ci95_certify': [5.7, 40.6], 'rel_reduction_certify_pct': 2.0, 'mean_diff_first_correct': 67.7, 'ci95_first_correct': [24.4, 111.7]}
+uniform:fanin-decisive {'mean_diff_certify': -2.5, 'ci95_certify': [-3.3, -1.8], 'rel_reduction_certify_pct': -4.6, 'mean_diff_first_correct': -1.7, 'ci95_first_correct': [-2.9, -0.5]}
+uniform:criticality-decisive {'mean_diff_certify': -2.7, 'ci95_certify': [-3.5, -1.9], 'rel_reduction_certify_pct': -4.9, 'mean_diff_first_correct': -3.1, 'ci95_first_correct': [-4.1, -2.1]}
+uniform:evoi-decisive {'mean_diff_certify': -2.8, 'ci95_certify': [-3.5, -2.0], 'rel_reduction_certify_pct': -5.0, 'mean_diff_first_correct': -5.2, 'ci95_first_correct': [-7.2, -3.4]}
+uniform:random-decisive {'mean_diff_certify': 4.0, 'ci95_certify': [2.9, 5.1], 'rel_reduction_certify_pct': 6.4, 'mean_diff_first_correct': 4.3, 'ci95_first_correct': [2.8, 5.9]}
+{'all_final_plans_correct': True}

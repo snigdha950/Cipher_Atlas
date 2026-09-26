@@ -1,0 +1,8 @@
+two_tier  criticality  twin=  1006.5 no_twin=  1386.5 saving= 27.4% CI95(diff)=[363,396]
+two_tier  fanin        twin=  1032.7 no_twin=  1374.5 saving= 24.9% CI95(diff)=[318,364]
+two_tier  decisive     twin=  1053.3 no_twin=  1433.0 saving= 26.5% CI95(diff)=[368,392]
+two_tier  test_all     twin=  1675.7 no_twin=  2185.2 saving= 23.3% CI95(diff)=[502,517]
+steep     criticality  twin=  3742.0 no_twin=  4908.2 saving= 23.8% CI95(diff)=[1110,1218]
+steep     fanin        twin=  3854.4 no_twin=  4861.0 saving= 20.7% CI95(diff)=[920,1086]
+steep     decisive     twin=  3862.3 no_twin=  5035.2 saving= 23.3% CI95(diff)=[1138,1210]
+steep     test_all     twin=  6331.6 no_twin=  7900.8 saving= 19.9% CI95(diff)=[1546,1592]

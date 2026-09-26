@@ -1,0 +1,113 @@
+[
+ {
+  "target_contracts": 100,
+  "seed": 0,
+  "contracts": 110,
+  "unknown_facts": 126,
+  "components": 2,
+  "largest_component": 109,
+  "t_components_s": 0.001,
+  "t_opt_plus_pes_solve_s": 0.0097,
+  "assumptions": 78,
+  "t_decisive_pass_s": 0.5224
+ },
+ {
+  "target_contracts": 100,
+  "seed": 1,
+  "contracts": 107,
+  "unknown_facts": 126,
+  "components": 1,
+  "largest_component": 107,
+  "t_components_s": 0.0006,
+  "t_opt_plus_pes_solve_s": 0.0069,
+  "assumptions": 74,
+  "t_decisive_pass_s": 0.4581
+ },
+ {
+  "target_contracts": 100,
+  "seed": 2,
+  "contracts": 110,
+  "unknown_facts": 142,
+  "components": 1,
+  "largest_component": 110,
+  "t_components_s": 0.0006,
+  "t_opt_plus_pes_solve_s": 0.0071,
+  "assumptions": 85,
+  "t_decisive_pass_s": 0.5901
+ },
+ {
+  "target_contracts": 1000,
+  "seed": 0,
+  "contracts": 1042,
+  "unknown_facts": 1051,
+  "components": 4,
+  "largest_component": 1039,
+  "t_components_s": 0.0058,
+  "t_opt_plus_pes_solve_s": 0.1245,
+  "assumptions": 576,
+  "t_decisive_pass_s": 30.9403
+ },
+ {
+  "target_contracts": 1000,
+  "seed": 1,
+  "contracts": 1037,
+  "unknown_facts": 1046,
+  "components": 5,
+  "largest_component": 1032,
+  "t_components_s": 0.0045,
+  "t_opt_plus_pes_solve_s": 0.119,
+  "assumptions": 584,
+  "t_decisive_pass_s": 30.969
+ },
+ {
+  "target_contracts": 1000,
+  "seed": 2,
+  "contracts": 1038,
+  "unknown_facts": 1071,
+  "components": 2,
+  "largest_component": 1037,
+  "t_components_s": 0.0046,
+  "t_opt_plus_pes_solve_s": 0.1354,
+  "assumptions": 596,
+  "t_decisive_pass_s": 45.0581
+ },
+ {
+  "target_contracts": 10000,
+  "seed": 0,
+  "contracts": 10127,
+  "unknown_facts": 10067,
+  "components": 14,
+  "largest_component": 10114,
+  "t_components_s": 0.0888,
+  "t_opt_plus_pes_solve_s": 7.6774,
+  "assumptions": 5472,
+  "t_decisive_pass_s": null,
+  "decisive_note": "skipped: estimated 42011s > budget 300.0s"
+ },
+ {
+  "target_contracts": 10000,
+  "seed": 1,
+  "contracts": 10119,
+  "unknown_facts": 10120,
+  "components": 12,
+  "largest_component": 10107,
+  "t_components_s": 0.1013,
+  "t_opt_plus_pes_solve_s": 9.2972,
+  "assumptions": 5489,
+  "t_decisive_pass_s": null,
+  "decisive_note": "skipped: estimated 51033s > budget 300.0s"
+ },
+ {
+  "target_contracts": 10000,
+  "seed": 2,
+  "contracts": 10126,
+  "unknown_facts": 10032,
+  "components": 17,
+  "largest_component": 10107,
+  "t_components_s": 0.073,
+  "t_opt_plus_pes_solve_s": 9.9983,
+  "assumptions": 5372,
+  "t_decisive_pass_s": null,
+  "decisive_note": "skipped: estimated 53711s > budget 300.0s"
+ }
+]

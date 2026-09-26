@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="CipherAtlas: evidence-driven post-quantum migration rehearsal MVP" />
+  <title>CipherAtlas · PQC Migration Rehearsal</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brandmark">CA</div><div><strong>CipherAtlas</strong><span>Evidence-driven PQC migration</span></div></div>
+    <nav>
+      <button class="nav active" data-view="overview">Overview</button>
+      <button class="nav" data-view="inventory">Crypto inventory</button>
+      <button class="nav" data-view="rehearsal">Migration rehearsal</button>
+      <button class="nav" data-view="evidence">Evidence & limits</button>
+    </nav>
+    <div class="side-note">
+      <span class="dot"></span>
+      <div><strong>Offline-ready</strong><small>Scanned repository code is never executed.</small></div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div><span class="eyebrow">Post-Quantum Cryptography migration</span><h1 id="pageTitle">Evidence before migration</h1></div>
+      <div class="top-actions">
+        <button class="ghost" id="sampleBtn">Scan sample</button>
+        <label class="primary upload">Scan ZIP<input id="zipInput" type="file" accept=".zip,.py,.conf,.pem,.crt,.cer,.json" hidden></label>
+      </div>
+    </header>
+
+    <section id="view-overview" class="view active">
+      <div class="hero">
+        <div>
+          <div class="pill">The problem</div>
+          <h2>A connection can succeed while a post-quantum migration quietly fails.</h2>
+          <p>Companies cannot safely replace cryptography by algorithm name alone. CipherAtlas finds where cryptography is used, identifies who depends on it, tests uncertain compatibility, and shows what was actually negotiated.</p>
+          <div class="hero-actions"><button class="primary" data-go="rehearsal">Run the proof</button><button class="ghost" data-go="inventory">Inspect discovery</button></div>
+        </div>
+        <div class="loop-card">
+          <div class="loop-step done"><b>1</b><span>Discover<small>source · config · certificate</small></span></div><div class="line"></div>
+          <div class="loop-step done"><b>2</b><span>Understand<small>purpose + dependency</small></span></div><div class="line"></div>
+          <div class="loop-step current"><b>3</b><span>Probe<small>observe real TLS negotiation</small></span></div><div class="line"></div>
+          <div class="loop-step"><b>4</b><span>Decide<small>block · validate · retest</small></span></div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><span>Findings</span><strong id="mFindings">—</strong><small>cryptographic evidence</small></div>
+        <div class="metric"><span>Scan coverage</span><strong id="mCoverage">—</strong><small id="mCoverageText">waiting for scan</small></div>
+        <div class="metric"><span>Contracts</span><strong id="mContracts">—</strong><small>producer ↔ consumer</small></div>
+        <div class="metric"><span>Unresolved</span><strong id="mUnknown">—</strong><small>require evidence</small></div>
+      </div>
+
+      <div class="grid2">
+        <article class="card">
+          <div class="card-head"><div><span class="eyebrow">Measured Phase 0 behavior</span><h3>Silent classical fallback</h3></div><span class="badge amber">Real probe evidence</span></div>
+          <div class="compare-flow">
+            <div><small>Migration target</small><strong>X25519MLKEM768</strong><span>hybrid classical + post-quantum key establishment</span></div>
+            <div class="arrow">→</div>
+            <div><small>Legacy client observed</small><strong>X25519</strong><span>connection succeeds, target is not achieved</span></div>
+          </div>
+          <p class="muted">CipherAtlas treats observed negotiation as stronger evidence than a configuration claim.</p>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="eyebrow">Plain English</span><h3>What the scary names mean</h3></div><span class="badge blue">Quick glossary</span></div>
+          <div class="glossary-grid">
+            <div><strong>PQC</strong><span>Post-Quantum Cryptography: algorithms designed for the quantum era.</span></div>
+            <div><strong>TLS</strong><span>Transport Layer Security: protects connections such as HTTPS.</span></div>
+            <div><strong>X25519</strong><span>A classical method for establishing a shared secret.</span></div>
+            <div><strong>ML-KEM</strong><span>A post-quantum method for establishing a shared secret.</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="view-inventory" class="view">
+      <div class="section-intro"><div><span class="eyebrow">Static discovery</span><h2>Cryptographic inventory</h2><p>Findings show purpose and exact evidence. Unsupported or failed files never become a fake “clean” result.</p></div><div id="coverageBadge" class="coverage-badge">Not scanned</div></div>
+      <div class="card"><div class="table-wrap"><table><thead><tr><th>Finding</th><th>Purpose</th><th>Evidence</th><th>Concern</th></tr></thead><tbody id="findingsBody"></tbody></table></div></div>
+      <div class="grid2 lower">
+        <article class="card"><div class="card-head"><h3>Dependency contracts</h3><span class="badge">Minimal graph</span></div><div id="contractsList" class="contract-list"></div></article>
+        <article class="card"><div class="card-head"><h3>Coverage & parser health</h3><span class="badge" id="healthBadge">—</span></div><div id="coverageDetails" class="detail-list"></div></article>
+      </div>
+    </section>
+
+    <section id="view-rehearsal" class="view">
+      <div class="section-intro"><div><span class="eyebrow">Judge mode · live / measured evidence</span><h2>Migration rehearsal</h2><p>Change the client or migration policy, rerun the probe, and watch the decision change from evidence.</p></div><span class="badge blue">Target: X25519MLKEM768</span></div>
+
+      <div class="challenge-strip">
+        <div><strong>Fast judge challenges</strong><small>One click sets a reproducible scenario.</small></div>
+        <button class="challenge" data-client="openssl-3.0.13" data-config="hybrid_with_classical_fallback">1 · Silent fallback</button>
+        <button class="challenge" data-client="openssl-3.0.13" data-config="hybrid_only">2 · Hard break</button>
+        <button class="challenge" data-client="openssl-3.5.4" data-config="hybrid_only">3 · Modern pass</button>
+      </div>
+
+      <div class="rehearsal-grid">
+        <article class="card controls-card">
+          <h3>1. Choose the consumer</h3>
+          <label>Client stack<select id="clientSelect"><option value="openssl-3.0.13">Legacy · OpenSSL 3.0.13</option><option value="openssl-1.1.1w">Legacy · OpenSSL 1.1.1w</option><option value="openssl-3.5.4">Modern · OpenSSL 3.5.4</option><option value="local-system-openssl">This laptop · live OpenSSL probe</option></select></label>
+          <label>Server migration policy<select id="configSelect"><option value="hybrid_with_classical_fallback">Hybrid preferred + classical fallback</option><option value="hybrid_only">Hybrid required</option><option value="classical_only">Classical only</option></select></label>
+          <div class="term-box"><strong>Hybrid, in plain English</strong><span>Use classical X25519 together with post-quantum ML-KEM during transition. A legacy client may still fall back to X25519, so CipherAtlas checks what actually happened.</span></div>
+          <button class="primary full" id="probeBtn">Run compatibility probe</button>
+          <small class="safety">Live mode uses CipherAtlas' own loopback OpenSSL harness. Uploaded repository code is never executed.</small>
+        </article>
+
+        <article class="card decision-card">
+          <div class="decision-top"><span class="eyebrow">Current decision</span><span id="modeBadge" class="badge">No probe</span></div>
+          <div id="decisionState" class="decision-state ready">READY_FOR_PROBE</div>
+          <h3 id="decisionHeadline">Critical compatibility evidence is missing</h3>
+          <p id="decisionReason" class="muted">Run a controlled probe to observe what this consumer actually negotiates.</p>
+          <div class="observed">
+            <div><small>Connection</small><strong id="obsConnection">—</strong></div>
+            <div><small>Expected</small><strong>X25519MLKEM768</strong></div>
+            <div><small>Observed</small><strong id="obsGroup">—</strong></div>
+          </div>
+          <div id="actions" class="actions-list"></div>
+        </article>
+      </div>
+
+      <div class="grid2 lower">
+        <article class="card proof-card">
+          <div class="card-head"><div><span class="eyebrow">Judge proof</span><h3>Evidence trail</h3></div><div class="inline-actions"><button class="ghost mini" id="downloadEvidence" disabled>Download JSON</button><button class="ghost mini" id="toggleRaw">Show raw evidence</button></div></div>
+          <div id="proofSummary" class="proof-summary"><div><small>Probe</small><strong>Not run</strong></div><div><small>Source</small><strong>—</strong></div><div><small>Version / scope</small><strong>—</strong></div></div>
+          <pre id="rawEvidence" class="raw hidden">Run a probe to inspect evidence.</pre>
+        </article>
+        <article class="card">
+          <div class="card-head"><div><span class="eyebrow">Before → after</span><h3>Decision history</h3></div><span class="badge" id="historyCount">0 runs</span></div>
+          <div id="historyList" class="history-list"><p class="muted">Run two scenarios to show the plan changing from evidence.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="view-evidence" class="view">
+      <div class="section-intro"><div><span class="eyebrow">Claim boundary</span><h2>Evidence, coverage and limitations</h2><p>A lab pass proves only the named test, version and environment. CipherAtlas deliberately preserves unknowns.</p></div></div>
+      <div class="grid2">
+        <article class="card"><div class="card-head"><h3>Crypto stack evidence profiles</h3><span class="badge green">Measured</span></div><div id="profilesList" class="profile-list"></div></article>
+        <article class="card"><div class="card-head"><h3>Hard limitations</h3><span class="badge amber">Do not hide</span></div>
+          <ul class="limits"><li>Only a narrow MVP subset of source, configuration and certificate formats is scanned.</li><li>A stack profile does not replace direct probing when build, provider or application configuration differs.</li><li>Phase 0 stack-reuse savings are simulation results, not guaranteed enterprise savings.</li><li>The MVP does not claim an enterprise is “quantum-safe”, “secure” or “production-ready”.</li><li>Public Web PKI, HSM/KMS firmware and vendor appliances remain external dependencies.</li><li>ML-DSA certificate transition is a controlled lab demonstration, not a browser-ecosystem claim.</li></ul>
+        </article>
+      </div>
+
+      <div class="grid2 lower">
+        <article class="card"><div class="card-head"><h3>Problem-statement traceability</h3><span class="badge blue">MVP coverage</span></div>
+          <div class="trace-list">
+            <div><b>✓</b><span>Source / config / certificate discovery</span></div>
+            <div><b>✓</b><span>Purpose-aware findings + file/line evidence</span></div>
+            <div><b>✓</b><span>Dependency-aware inventory</span></div>
+            <div><b>✓</b><span>Confirmed vs unknown / inconclusive evidence</span></div>
+            <div><b>✓</b><span>Prioritized migration actions</span></div>
+            <div><b>✓</b><span>Crypto-agility rehearsal with vetted OpenSSL evidence</span></div>
+            <div><b>✓</b><span>Limitations + compatibility requirements</span></div>
+          </div>
+        </article>
+        <article class="card"><div class="card-head"><h3>Phase 0 decisions</h3><span class="badge">Research-backed</span></div>
+          <div class="decision-log"><div><strong>Keep</strong><p>Real TLS probes, explicit unknowns, reusable stack evidence and confirmed-fact planning.</p></div><div><strong>Drop</strong><p>The sophisticated “decisive” selector. It did not beat the simple baseline enough to justify itself.</p></div><div><strong>Next</strong><p>Broader discovery holdout, non-default runtime profiles and security hardening.</p></div></div>
+        </article>
+      </div>
+    </section>
+  </main>
+</div>
+<div id="toast" class="toast"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>
